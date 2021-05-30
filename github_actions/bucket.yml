@@ -1,0 +1,23 @@
+Description: It create two buckets in the S3
+
+Resources:
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: bucket-luizclaudiosantos-first-bucket
+      BucketEncryption: 
+        ServerSideEncryptionConfiguration: 
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: True
+        BlockPublicPolicy: True
+        IgnorePublicAcls: True
+        RestrictPublicBuckets: True
+
+  S3Bucket2:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: bucket-luizclaudiosantos-second-bucket    
+    
